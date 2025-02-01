@@ -15,6 +15,9 @@ public class SignosVitales  {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "fecha")
+    private String fecha;
+
     @Column(name = "frecuenciaCardiaca")
     private double frecuenciaCardiaca;
 
@@ -71,6 +74,15 @@ public class SignosVitales  {
 
     public SignosVitales setPaciente(Paciente paciente) {
         this.paciente = paciente;
+        return this;
+    }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public SignosVitales setFecha(String fecha) {
+        this.fecha = fecha;
         return this;
     }
 }
