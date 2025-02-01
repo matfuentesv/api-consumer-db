@@ -10,7 +10,7 @@ public class SignosVitalesMq implements Serializable {
     private double frecuenciaCardiaca;
     private double presionArterial;
     private double nivelOxigeno;
-
+    private boolean anomalous;
 
 
     public Long getPacienteId() {
@@ -29,13 +29,7 @@ public class SignosVitalesMq implements Serializable {
         return nivelOxigeno;
     }
 
-    @Override
-    public String toString() {
-        return "SignosVitalesMq{" +
-                "pacienteId=" + pacienteId +
-                ", frecuenciaCardiaca=" + frecuenciaCardiaca +
-                ", presionArterial=" + presionArterial +
-                ", nivelOxígeno=" + nivelOxigeno +
-                '}';
+    public boolean isAnomalous() {
+        return anomalous;
     }
 }
