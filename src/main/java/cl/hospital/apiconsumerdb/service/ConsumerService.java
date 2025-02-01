@@ -1,5 +1,6 @@
 package cl.hospital.apiconsumerdb.service;
 
+import cl.hospital.apiconsumerdb.model.Paciente;
 import cl.hospital.apiconsumerdb.model.SignosVitales;
 import cl.hospital.apiconsumerdb.model.SignosVitalesMq;
 import cl.hospital.apiconsumerdb.repository.AlertRepository;
@@ -55,8 +56,9 @@ public class ConsumerService {
 
     private SignosVitales setBody(SignosVitalesMq body){
         return  new SignosVitales()
+                .setPaciente(new Paciente(body.getPacienteId()))
                 .setFrecuenciaCardiaca(body.getFrecuenciaCardiaca())
-                .setNivelOxígeno(body.getNivelOxígeno())
+                .setNivelOxígeno(body.getNivelOxigeno())
                 .setPresionArterial(body.getPresionArterial());
     }
 }

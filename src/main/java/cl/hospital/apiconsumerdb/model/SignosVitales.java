@@ -13,7 +13,7 @@ public class SignosVitales  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long pacienteId;
+    private Long id;
 
     @Column(name = "frecuenciaCardiaca")
     private double frecuenciaCardiaca;
@@ -24,14 +24,17 @@ public class SignosVitales  {
     @Column(name = "nivelOxígeno")
     private double nivelOxígeno;
 
+    @ManyToOne
+    @JoinColumn(name = "paciente_id", referencedColumnName = "id", nullable = false)
+    private Paciente paciente;
 
 
-    public Long getPacienteId() {
-        return pacienteId;
+    public Long getId() {
+        return id;
     }
 
-    public SignosVitales setPacienteId(Long pacienteId) {
-        this.pacienteId = pacienteId;
+    public SignosVitales setId(Long id) {
+        this.id = id;
         return this;
     }
 
@@ -62,4 +65,12 @@ public class SignosVitales  {
         return this;
     }
 
+    public Paciente getPaciente() {
+        return paciente;
+    }
+
+    public SignosVitales setPaciente(Paciente paciente) {
+        this.paciente = paciente;
+        return this;
+    }
 }
