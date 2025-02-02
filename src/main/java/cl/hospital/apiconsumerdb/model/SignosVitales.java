@@ -85,4 +85,16 @@ public class SignosVitales  {
         this.fecha = fecha;
         return this;
     }
+
+    @Override
+    public String toString() {
+        return "SignosVitales{" +
+                "id=" + id +
+                ", fecha='" + fecha + '\'' +
+                ", frecuenciaCardiaca=" + frecuenciaCardiaca +
+                ", presionArterial=" + presionArterial +
+                ", nivelOxígeno=" + nivelOxígeno +
+                ", paciente=" + paciente +
+                '}';
+    }
 }
